@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            margin: 10px;
+            /* 경계선을 한줄로 */
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+
+        th:first-child, td:first-child {
+            font-weight: bold;
+            border-right-width: 2px;
+            background-color: pink;
+        }
+
+        thead th {
+            /* border-bottom-width를 통해 밑에 경계선 굵기 조절 */
+            border-bottom-width: 2px;
+            background-color: pink;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 테이블 태그시작 -->
+    <table>
+        <!-- thead -> 테이블 헤드부분 -->
+        <thead>
+            <th>구분</th>
+            <th>2016년</th>
+            <th>2022년</th>
+        </thead>
+            <!-- tbody -> 테이블에서 본문부분 -->
+        <tbody>
+            <tr>
+                <td>철학</td>
+                <td>50.0%</td>
+                <td>54.9%</td>   
+            </tr>
+            <tr>
+                <td>소설</td>
+                <td>40.7%</td>
+                <td>53.4%</td>   
+            </tr>
+        </tbody>
+        <!-- tfoot -> 테이블에서 foot 부분 -->
+        <tfoot>
+            <tr>
+                <td>자기계발</td>
+                <td>51.0%</td>
+                <td>51.6%</td>   
+            </tr>
+        </tfoot>
+    </table>
+    <div class="content">나는 이런 종류의 책이 사고 싶다</div>
+</body>
+</html>

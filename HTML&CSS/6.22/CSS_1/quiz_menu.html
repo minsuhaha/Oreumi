@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        li {
+            /* li 효과 제거하기 */
+            list-style:none;
+        }
+        a {
+            /* 밑줄 없애주기 */
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+    /* 메인 메뉴바 작성 */
+        .menu {
+            width: 100%;
+            margin: 50px auto;
+
+        }
+        
+        .menu > li {
+            /* 크기 조정 */
+            width: 100%;
+            /* 기본으로 두면 위에서 아래로 쌓이기 때문에 float:left; 속성을 줌으로써 가로로 메뉴바가 설정되도록 변경!*/
+            /* float: left; */
+            /* 글자 가운데 정렬 */
+            text-align: center;
+            /* 텍스트 줄 간격 조정 위아래 여백 생기도록 25px씩*/
+            line-height: 50px;
+            background-color: blue;
+            /* 옆으로 튀어나왔던 선 정리! */
+            overflow: hidden;
+        }
+        
+        .menu a {
+            color: white;
+        }
+        
+    /* 서브 메뉴바 작성 */
+        .submenu > li {
+            /* 텍스트 줄 간격 조정 위아래 여백 생기도록 설정 */
+            line-height: 50px;
+            background-color: skyblue;
+        }
+        
+        .submenu {
+            /* 일단 안보이도록 설정! */
+            display: none;
+        }
+
+
+    /* hover 부분 작성 */
+        /* 메뉴, 서브메뉴 클릭시 font-weight 커지도록*/
+        .menu a:hover {
+            font-weight: 600;
+        }
+        
+        /* 메뉴에 마우스 호버 하면 색깔 변경되도록 */
+        .menu > li:hover {
+            background-color: #94a9ff;
+            transition-duration: 0.5s;
+        }
+
+        /* 서브메뉴 원래 display:none; 으로 설정해줬던거 보이도록 만들기! */
+        .menu > li:hover .submenu {
+            display: block;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>
+            <a href="#">MENU1</a>
+            <ul class="submenu">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">MENU2</a>
+            <ul class="submenu">
+                <li><a href="#">submenu01</a></li>
+                <li><a href="#">submenu02</a></li>
+                <li><a href="#">submenu03</a></li>
+                <li><a href="#">submenu04</a></li>
+                <li><a href="#">submenu05</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">MENU3</a>
+            <ul class="submenu">
+                <li><a href="#">submenu01</a></li>
+                <li><a href="#">submenu02</a></li>
+                <li><a href="#">submenu03</a></li>
+                <li><a href="#">submenu04</a></li>
+                <li><a href="#">submenu05</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">MENU4</a>
+            <ul class="submenu">
+                <li><a href="#">submenu01</a></li>
+                <li><a href="#">submenu02</a></li>
+                <li><a href="#">submenu03</a></li>
+                <li><a href="#">submenu04</a></li>
+                <li><a href="#">submenu05</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">MENU5</a>
+            <ul class="submenu">
+                <li><a href="#">submenu01</a></li>
+                <li><a href="#">submenu02</a></li>
+                <li><a href="#">submenu03</a></li>
+                <li><a href="#">submenu04</a></li>
+                <li><a href="#">submenu05</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
