@@ -42,8 +42,24 @@ print(s[i-1])
 # 2번. 단어 길이 재기
 word = input()
 print(len(word))
+
+
+#  3번. 문자열
+n = int(input())
+for i in range(n):
+    word = input()
+    print(f'{word[0]}{word[-1]}')
+
+
+# 4번. 아스키 코드
+print(ord(input()))
+
+
+# 5번. 숫자의 합
+n = int(input())
+num = input()
+total = 0
+for i in range(n):
+    total+=int(num[i])
+print(total)
 '''
-
-
-
-
