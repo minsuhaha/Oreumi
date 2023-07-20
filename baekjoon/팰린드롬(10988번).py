@@ -14,7 +14,7 @@ else:
     else:
         print(0)
 
-# 2. 재귀함수를 사용하여 팰린드롬 해결
+# # 2. 재귀함수를 사용하여 팰린드롬 해결
 def palindrome(word):
     if len(word) <= 1:
         return 1
@@ -26,3 +26,12 @@ def palindrome(word):
 
 result = palindrome(word)
 print(result)
+
+# 3. for 문을 이용하여 해결
+for i in range((len(word)//2)+1):
+    if word[i] != word[-(i+1)]:
+        break
+if i == (len(word)//2):
+    print(1)
+else:
+    print(0)
