@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ message }}</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <p>연도: {{ number }}</p>
+    
+    <h2>사용 언어:</h2>
+    <ul>
+        {% for language in my_list %}
+            <li>{{ language }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>개인정보:</h2>
+    <p>Name: {{ my_dict.name }}</p>
+    <p>Age: {{ my_dict.age }}</p>
+    <p>City: {{ my_dict.city }}</p>
+    
+    {% if number > 2023 %}
+        <p>미래연도</p>
+    {% elif number == 2023 %}
+        <p>현재연도</p>
+    {% else %}
+        <p>과거연도</p>
+    {% endif %}
+</body>
+</html>
+
