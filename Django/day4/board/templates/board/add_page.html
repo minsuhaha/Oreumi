@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 작성 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 10px #ddd;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type='number'],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            margin-top :30px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form method='post' action="{% url 'add_data' %}">
+        {% csrf_token %}
+        <label for="title">제목: </label>
+        <input type="text" id="title" name='title' required><br>
+
+        <label for="content">내용: </label>
+        <textarea id="content" name='content' rows='4' required></textarea><br>
+
+        <label for="published_date">작성날짜: </label>
+        <input type="date" id="published_date" name='published_date' required><br>
+
+        <label for="published_date">추천수: </label>
+        <input type='number' id="published_date" name='recommend_count' required><br>
+
+        <input type="submit" value='Add Post'>
+    </form>
+</body>
+</html>
