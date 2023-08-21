@@ -37,7 +37,7 @@ def bfs(i, j, high):
 
 # high 값은 모든 지역이 잠기므로 빼고 for 돌리기
 result = 0
-for k in range(1, high):
+for k in range(high):
     cnt = 0
     visited = [[0]*n for _ in range(n)]
 
