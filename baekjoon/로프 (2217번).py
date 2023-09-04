@@ -11,4 +11,4 @@ for w in weight:
     result.append(w*cnt)
     cnt += 1
 
-print(result)
+print(max(result))
