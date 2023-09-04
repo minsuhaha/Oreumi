@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <style>
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .search-container {
+            text-align: center;
+            padding: 50px;
+        }
+        .search-box {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .search-results {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .book-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>오르미 책 검색</h1>
+    </div>
+    <div class="search-container">
+        <form method="GET">
+            <input class="search-box" type="text" name="q" value="{{ request.GET.q }}" placeholder="Search for books">
+            <button class="search-button" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="search-results">
+        {% for book in books %}
+            <div class="book-box">
+                <h3>{{ book.object.title }}</h3>
+                <p>Author: {{ book.object.author }}</p>
+            </div>
+        {% empty %}
+            <p>No results found.</p>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>&copy; 2023 minsu ha</p>
+      </footer>
+</body>
+</html>
